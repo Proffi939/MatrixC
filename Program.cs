@@ -1,4 +1,4 @@
-﻿int GetNumSize(int num)
+﻿﻿int GetNumSize(int num)
 {
     int size = 0;
     while (num > 0)
@@ -9,14 +9,14 @@
     return size;
 }
 
-int GetRow(int x, int y)
+int MthPow(int num, int exp)
 {
-    int z = x;
-    for(int i = 1; i < y; i++)
+    int z = num;
+    for(int i = 1; i < exp; i++)
     {
-        x = x * z;
+        num = num * z;
     }
-    return x;
+    return num;
 }
 
 bool CeckSimple(int num)
@@ -40,9 +40,9 @@ int simple = 0;
 int count = 0;
 for (int i = 1; i < size; i++)
 {
-    for(int j = 1; j < GetRow(10, (size+1-i)); j *= 10)
+    for(int j = 1; j < MthPow(10, (size+1-i)); j *= 10)
     {
-        int n = (num / j) % (GetRow(10, i));
+        int n = (num / j) % (MthPow(10, i));
             count++;
         if (CeckSimple(n) == true)
         {
